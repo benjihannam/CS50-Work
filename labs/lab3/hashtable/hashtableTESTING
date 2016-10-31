@@ -1,0 +1,17 @@
+TESTING for hashtable.c, test code is hashtabletest.c
+
+benjis-mac:hashtable benjihannam$ make test
+cd hashtable; ./hashtabletest
+/bin/sh: line 0: cd: hashtable: No such file or directory
+********************************
+Making the new hashtable...
+
+Generating the keys and data to go in..
+
+Inserting the keys and data to go in..
+
+Testing a valid key, should return '5':
+5
+Testing an invalid key, should print 'key not found':
+Key not found
+********************************

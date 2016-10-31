@@ -1,0 +1,25 @@
+TESTING for counters.c, test code is counterstest.c
+
+benjis-mac:counter benjihannam$ make test
+cd counter; ./counterstest 
+/bin/sh: line 0: cd: counter: No such file or directory
+********************************
+Making a set of new counters:
+
+Adding the counters:
+Adding to counter 2
+Adding to counter 2
+Adding to counter 3
+Adding to counter 100
+
+Getting counter 2, should print '2':
+2
+Getting counter 3, should print '1':
+1
+Getting counter 4, should print '0':
+0
+Getting counter 100, should print '1':
+1
+
+Deleting the set of counters
+********************************

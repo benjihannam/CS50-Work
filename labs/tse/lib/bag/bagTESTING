@@ -1,0 +1,27 @@
+TESTING for bag.c, test code is bagtest.c
+
+benjis-mac:bag benjihannam$ make test
+cd bag; ./bagtest 
+/bin/sh: line 0: cd: bag: No such file or directory
+********************************
+Creating a new bag for ints.
+
+Setting up the ints to insert.
+
+Inserting '10' into the bag.
+Inserting '7' into the bag.
+
+Extracing an item from the bag, will print empty if nothing in it:
+10
+Extracing an item from the bag, will print empty if nothing in it:
+7
+********************************
+Creating a new bag for strings.
+
+Inserting 'Hello' into the bag. 
+
+Extracing an item from the bag, will print empty if nothing in it:
+Hello
+Extracing an item from the bag, will print empty if nothing in it:
+Empty.
+********************************

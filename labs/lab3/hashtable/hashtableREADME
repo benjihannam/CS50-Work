@@ -1,0 +1,31 @@
+README for hashtable.c
+Benji Hannam, July 2016
+
+Compiling:
+	make
+Usage:
+/* 
+ * hashtable.c - a hashtable structure
+ * 
+ * usage: ./hashtable
+ * - is included in other programs to provide a hashtable structure
+ *
+ * output:
+ *
+ * Benji Hannam, July 2016
+ */
+
+Example command lines:
+	
+	
+
+Exit status:
+  0 - success
+
+Assumptions:
+- The user knows what type of data is associated with each key so that when it returns they can cast it as appropriate
+
+Non-Assumptions:
+-data can be of any type
+Limitations:
+- 

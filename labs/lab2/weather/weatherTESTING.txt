@@ -1,0 +1,40 @@
+TESTING for weather.c
+Benji Hannam, July 2016
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather
+./weather needs one arg, a location code like KMWN.  To look up location codes, see http://w1.weather.gov/xml/current_obs/seek.php?state=.
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with two arguments
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather KMWN KMWN
+Error: Too many arguments. One argument expected.
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with one valid argument that exists
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather KMWN
+Credit: NOAA's National Weather Service
+Location: Mount Washington, NH
+station_id: KMWN
+Observation_time: Last Updated on Jul 14 2016, 1:47 pm EDT
+Weather: Fog and Windy
+Temperature_string: 59.0 F (15.0 C)
+Relative_humidity: 100
+Wind_string: from the Southwest at 27.6 gusting to 38.0 MPH (24 gusting to 33 KT)
+Visibility: 0.00
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with one invalid argument
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather KMWNT
+Error: Location code must be 4 characters.
+
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather KMwN
+Error: Location code contains a lowercase character.
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with one valid argument that doesn’t exist
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/weather]$ ./weather KWMN
+Error: the weather station code KWMN was not found.

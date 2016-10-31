@@ -1,0 +1,33 @@
+README for bag.c
+Benji Hannam, July 2016
+
+Compiling:
+	make
+Usage:
+/* 
+ * bag.c - a simple bag structure
+ * 
+ * usage: ./bag
+ * - is included in other programs to provide a bag structure
+ *
+ * output:
+ *
+ * Benji Hannam, July 2016
+ */
+
+Example command lines:
+	
+	
+
+Exit status:
+  0 - success
+
+Assumptions:
+- although the items in the bag are indistinguishable it is assumed that all the items in one bag are of the same type. It is possible to put different types into one bag but there will be difficulty for the use when extracting as they won’t necessarily know what type of data they are pulling out
+-Assume that the user will not try to extract again from a bag once it has been deleted.
+
+Non-Assumptions:
+-bag can hold up to any number of items as long as memory space permits
+
+Limitations:
+- difficulty casting data when using extract as the user has to know the type of data they are extracting.

@@ -1,0 +1,17 @@
+TESTING for set.c, test code is settest.c
+
+********************************
+Creating a new set.
+
+Generating the keys and data for the new set.
+
+Inserting data 'World' with key 'Hello' into the set.
+Inserting data '7' with the key 'World' into the set.
+Inserting data 'World' with key 'Hello' into the set. Should already be there so will print 'Key already there'if returns false.
+Key already there
+
+Retrieving the data with key: 'Hello'.
+World
+Retrieving the data with key: 'World'.
+7
+********************************

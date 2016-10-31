@@ -1,0 +1,245 @@
+TESTING for dog.c
+Benji Hannam, July 2016
+
+The mapfile used was mapfiletest.txt which mapped each letter of the alphabet to the next one: E.g a —> b, D —> E and z —> a.
+The plaintext testfile used was test.txt which contained:
+
+abcd
+efgh
+
+The stdin test strings were “Hello World!” and “Goodbye World!”.
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments and no options
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog
+Hello World!
+Hello World!
+Goodbye World!
+Goodbye World!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test -h and —-help
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -h
+dog [-n] [-m mapfile] [-M mapfile] [-] [filename]...
+Option [-n] numbers output lines.
+At most one of [-m mapfile] or [-M mapfile] may be specified.
+ -m will encode the inputs into ciphertext using pairs of characters read from mapfile to create a simple substitution cipher.
+-M will decode the inputs back into plaintext using the pairs of characters read from mapfile. The first letter is the plaintext andthe second is the ciphertext equivalent 
+[-] is a special filename and will result in stdin being read and written to stdout
+
+dog [-n] [-m mapfile] [-M mapfile] [-] [filename]...
+Option [-n] numbers output lines.
+At most one of [-m mapfile] or [-M mapfile] may be specified.
+ -m will encode the inputs into ciphertext using pairs of characters read from mapfile to create a simple substitution cipher.
+-M will decode the inputs back into plaintext using the pairs of characters read from mapfile. The first letter is the plaintext andthe second is the ciphertext equivalent 
+[-] is a special filename and will result in stdin being read and written to stdout
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments and -n
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n
+Hello World!
+1. Hello World!
+Goodbye World!
+2. Goodbye World!
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments, -n and -m
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -m mapfiletest.txt
+Hello World!
+1. Ifmmp Xpsme!
+Goodbye World!
+2. Hppeczf Xpsme!
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments, -n and -M
+————————————————————————————————————————————————————————————————————————————————————————
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -M mapfiletest.txt
+Hello World!
+1. Gdkkn Vnqkc!
+Goodbye World!
+2. Gnncaxd Vnqkc!
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with special file
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -
+Hello World!
+Hello World!
+Goodbye World!
+Goodbye World!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with special file, -n
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -
+Hello World!
+1. Hello World!
+Goodbye World!
+2. Goodbye World!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments, -n and -m
+————————————————————————————————————————————————————————————————————————————————————————
+benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -m mapfiletest.txt -
+Hello World!
+1. Ifmmp Xpsme!
+Goodbye World!
+2. Hppeczf Xpsme!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with no arguments, -n and -M
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -M mapfiletest.txt -
+Hello World!
+1. Gdkkn Vnqkc!
+Goodbye World!
+2. Gnncaxd Vnqkc!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog testing.txt
+abcd
+efgh
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt, -n
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n testing.txt
+1. abcd
+2. efgh
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt, -n and -m
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -m mapfiletest.txt testing.txt
+1. bcde
+2. fghi
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt, -n and -M
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -M mapfiletest.txt testing.txt
+1. zabc
+2. defg
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt and special file
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog testing.txt -
+abcd
+efgh
+Hello World!
+Hello World!
+Goodbye World!
+Goodbye World!
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog - testing.txt
+Hello World!
+Hello World!
+Goodbye World!
+Goodbye World!
+abcd
+efgh
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt and special file, -n 
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n testing.txt -
+1. abcd
+2. efgh
+Hello World!
+3. Hello World!
+Goodbye World!
+4. Goodbye World!
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n - testing.txt
+Hello World!
+1. Hello World!
+Goodbye World!
+2. Goodbye World!
+3. abcd
+4. efgh
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt and special file, -n and -m
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -m mapfiletest.txt testing.txt -
+1. bcde
+2. fghi
+Hello World!
+3. Ifmmp Xpsme!
+Goodbye World!
+4. Hppeczf Xpsme!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with testing.txt and special file, -n and -M
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -M mapfiletest.txt testing.txt -
+1. zabc
+2. defg
+Hello World!
+3. Gdkkn Vnqkc!
+Goodbye World!
+4. Gnncaxd Vnqkc!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with multiple testing.txt and multiple special file, -n and -m
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -m mapfiletest.txt testing.txt - testing.txt -
+1. bcde
+2. fghi
+Hello World!
+3. Ifmmp Xpsme!
+Goodbye World!
+4. Hppeczf Xpsme!
+5. bcde
+6. fghi
+Hello World!
+7. Ifmmp Xpsme!
+Goodbye World!
+8. Hppeczf Xpsme!
+————————————————————————————————————————————————————————————————————————————————————————
+### Test the case with multiple testing.txt and multiple special file, -n and -M
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -M mapfiletest.txt testing.txt - testing.txt -
+1. zabc
+2. defg
+Hello World!
+3. Gdkkn Vnqkc!
+Goodbye World!
+4. Gnncaxd Vnqkc!
+5. zabc
+6. defg
+Hello World!
+7. Gdkkn Vnqkc!
+Goodbye World!
+8. Gnncaxd Vnqkc!
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test invalid option
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -g
+Error: -g is not a valid option.
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -n -g
+Error: -g is not a valid option.
+————————————————————————————————————————————————————————————————————————————————————————
+### Test invalid mapfile
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -m invalidmapfile.txt
+Hello World!
+Error opening the file invalidmapfile.txt, exiting... 
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -m invalidmapfile.txt testing.txt
+Error opening the file invalidmapfile.txt, exiting..
+
+————————————————————————————————————————————————————————————————————————————————————————
+### Test invalid file
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog invalidtest.txt
+invalidtest.txt is not a valid file. Exiting the program...
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog testing.txt invalidtest.txt
+abcd
+efgh
+invalidtest.txt is not a valid file. Exiting the program...
+————————————————————————————————————————————————————————————————————————————————————————
+### Test both -m and -M
+————————————————————————————————————————————————————————————————————————————————————————
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -m mapfiletest.txt -M mapfiletest.txt
+-M is not a valid file. Exiting the program...
+
+[benjihannam@flume ~/cs50/labs/lab2/dog]$ ./dog -m -M mapfiletest.txt
+Cannot have both -m and -M as options.

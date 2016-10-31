@@ -1,0 +1,6 @@
+1.ls -Ssh ~cs50/data/Lab1/photos/*/* | head
+2.ls -1 ~cs50/data/Lab1/photos/*/*.jpg | wc -l
+3. convert photo.jpg -thumbnail 100x100 thumbnail.jpg
+4. VAR=$(cat header.txt | tr ‘\n' ‘,')
+5.exif -m --tag="Image Description” photo.jpg
+6. for i in ./*.jpg; do mogrify -format png $i; done

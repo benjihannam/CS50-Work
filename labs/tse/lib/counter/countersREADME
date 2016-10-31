@@ -1,0 +1,32 @@
+README for counters.c
+Benji Hannam, July 2016
+
+Compiling:
+	make
+Usage:
+/* 
+ * counters.c - creates a group of counters
+ * 
+ * usage: ./counters
+ * - is included in other programs to provide a bag structure
+ *
+ * output:
+ *
+ * Benji Hannam, July 2016
+ */
+
+Example command lines:
+	
+	
+
+Exit status:
+  0 - success
+
+Assumptions:
+- assumes that the user will not try to access a bag after it has been deleted.
+
+Non-Assumptions:
+- 
+
+Limitations:
+- 

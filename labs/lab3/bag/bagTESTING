@@ -1,0 +1,49 @@
+TESTING for bag.c, test code is bagtest.c
+
+[benjihannam@flume ~/cs50/labs/lab3/bag]$ make test
+./bagtest
+********************************
+Creating a new bag for ints.
+
+Setting up the ints to insert.
+
+Inserting '10' into the bag.
+Inserting '7' into the bag.
+Inserting '1000' into the bag.
+Inserting '1232342' into the bag.
+
+Extracing an item from the bag, will print empty if nothing in it:
+10
+
+Extracing an item from the bag, will print empty if nothing in it:
+7
+
+Extracing an item from the bag, will print empty if nothing in it:
+1000
+
+Extracing an item from the bag, will print empty if nothing in it:
+1232342
+
+Extracing an item from the bag, will print empty if nothing in it:
+Empty.
+********************************
+Creating a new bag for strings.
+
+Inserting 'Hello' into the bag. 
+
+Inserting 'Please work' into the bag. 
+
+Inserting 'World' into the bag. 
+
+Extracing an item from the bag, will print empty if nothing in it:
+Hello
+
+Extracing an item from the bag, will print empty if nothing in it:
+Please work
+
+Extracing an item from the bag, will print empty if nothing in it:
+World
+
+Extracing an item from the bag, will print empty if nothing in it:
+Empty.
+********************************
